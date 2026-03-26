@@ -89,6 +89,37 @@ h1, h2, h3 { font-family: 'IBM Plex Mono', monospace; }
     margin-bottom: 10px; padding: 10px 14px; background: #161b22;
     border-radius: 6px; border-left: 3px solid #58a6ff;
 }
+
+/* ── Input / widget label visibility fix ─────────────────────────────── */
+[data-testid="stNumberInput"] label,
+[data-testid="stSelectbox"] label,
+[data-testid="stSlider"] label,
+[data-testid="stCheckbox"] label,
+[data-testid="stTextInput"] label,
+[data-testid="stTextArea"] label,
+[data-testid="stMultiSelect"] label,
+[data-testid="stRadio"] label,
+div[class*="stNumberInput"] label,
+div[class*="stSelectbox"] label,
+div[class*="stSlider"] label,
+div[class*="stCheckbox"] label,
+.stCheckbox span,
+p, label {
+    color: #e6edf3 !important;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    font-weight: 500 !important;
+}
+
+/* Slider labels (min/max tick marks) */
+[data-testid="stSlider"] [data-testid="stTickBarMin"],
+[data-testid="stSlider"] [data-testid="stTickBarMax"] {
+    color: #8b949e !important;
+}
+
+/* Help icon tooltip colour */
+button[data-testid="stTooltipHoverTarget"] svg {
+    fill: #58a6ff !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -849,4 +880,3 @@ with tab3:
             </tr>"""
         table_html += "</tbody></table>"
         st.markdown(table_html, unsafe_allow_html=True)
-
