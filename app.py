@@ -523,7 +523,7 @@ with tab1:
             in_yaps = st.checkbox("Currently has YAPS", value=False)
 
         st.markdown("<br>", unsafe_allow_html=True)
-        run_btn = st.button("▶  Run G-Computation Inference", type="primary", use_container_width=True)
+        run_btn = st.button("▶Generate Clinical Recommendation", type="primary", use_container_width=True)
 
     # ── RESULTS PANEL ────────────────────────────────────────────────────
     with col_results:
