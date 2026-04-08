@@ -331,9 +331,8 @@ st.markdown('''
 <div class="header-strip">
   <div class="header-title">G-Net Causal Inference Engine</div>
   <div class="header-sub">
-    Individualised CATE estimation · G-Computation counterfactuals · MoH 2020 safety filter
+    Individualised CATE estimation · G-Computation counterfactuals 
     <span class="badge">60 features</span>
-    <span class="badge">Offline edge</span>
     <span class="badge">Central Uganda Cohort</span>
   </div>
 </div>
@@ -711,22 +710,7 @@ with tab1:
                   <span class="safety-pass">✓ MoH 2020 ART safety check passed — no contraindications flagged</span>
                 </div>''', unsafe_allow_html=True)
 
-            # ── Raw JSON ──
-            with st.expander("Raw inference output (JSON)"):
-                out = {
-                    'base_suppression_prob': round(float(base_prob), 4),
-                    'composite_risk_score':  risk_score,
-                    'risk_level':            risk_lbl,
-                    'counterfactuals': {
-                        k: {'p1_treated':   round(float(v['p1']), 4),
-                            'p0_untreated': round(float(v['p0']), 4),
-                            'CATE':         round(float(v['cate']), 4)}
-                        for k, v in results.items()
-                    },
-                    'recommended':  best,
-                    'safety_flags': [f[1] for f in flags]
-                }
-                st.code(json.dumps(out, indent=2), language='json')
+            
 
         else:
             st.markdown('''
@@ -734,7 +718,7 @@ with tab1:
                 <div style="font-size:32px;margin-bottom:12px">🧬</div>
                 <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#8b949e">
                 Complete all sections of the patient assessment<br>then click<br>
-                <span style="color:#58a6ff">▶ Run G-Computation Inference</span>
+                <span style="color:#58a6ff">▶ Generate Clinical Recommendation </span>
                 </div>
             </div>''', unsafe_allow_html=True)
 
@@ -781,7 +765,7 @@ with tab2:
         'Best validation score':f'{MODEL_BEST_VAL:.4f}',
         'Training iterations':  str(getattr(outcome_model, "n_iter_", "N/A")),
         'Deployment format':    'joblib bundle (sklearn)',
-        'Inference mode':       'Offline edge — no cloud dependency',
+        
     }
     for k, v in summary.items():
         st.markdown(f'''
