@@ -332,7 +332,7 @@ st.markdown('''
   <div class="header-title">G-Net Causal Inference Engine</div>
   <div class="header-sub">
     Individualised CATE estimation · G-Computation counterfactuals 
-    <span class="badge">60 features</span>
+    
     <span class="badge">Central Uganda Cohort</span>
   </div>
 </div>
