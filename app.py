@@ -130,11 +130,11 @@ def load_bundle():
     return joblib.load(path)
 
 bundle        = load_bundle()
-outcome_model = bundle['outcome_model']
+outcome_model = bundle['gnet_outcome_model']
 prop_models   = bundle['prop_models']
 scaler        = bundle['scaler']
 FEATURE_COLS  = bundle['feature_cols']       # 60 features
-TREATMENTS    = bundle['treatments']
+TREATMENTS    = bundle['treatment_cols']
 TREAT_LABELS  = bundle['treat_labels']
 gnet_ate      = bundle['gnet_ate']
 
