@@ -293,7 +293,7 @@ with st.sidebar:
     st.markdown(f'''
     <div class="metric-card">
         <div class="metric-label">Architecture</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#c9d1d9;margin-top:4px">G-Net MLP (128→64→32)</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#c9d1d9;margin-top:4px">G-Net MLP (64→32)</div>
     </div>
     <div class="metric-card">
         <div class="metric-label">Best validation score</div>
